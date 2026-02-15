@@ -210,7 +210,7 @@ Esto separa responsabilidades y evita conflictos entre servicios.
                             Driver: iwlwifi
                             Vendor: Intel Corporation
                              Model: Wireless 8260
-                  Hardware Address: XX:XX:XX:XX:XX:XX (Intel Corporate)
+                  Hardware Address: XX:XX:XX:XX:XX:XX 
                                MTU: 1500 (min: 256, max: 2304)
                              QDisc: noqueue
       IPv6 Address Generation Mode: eui64
