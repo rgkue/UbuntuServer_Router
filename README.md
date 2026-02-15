@@ -114,7 +114,7 @@ Su IP privada no puede circular en internet, por lo que, la regla MASQUERADE ree
 
 Esto es lo que permite que múltiples dispositivos compartan una sola conexión a internet.
 
-# 📡 ¿Por qué no se utilizó wifis: en Netplan?
+# ¿Por qué no se utilizó wifis: en Netplan?
 
 Aunque Netplan permite configurar interfaces WiFi usando la sección **wifis:**, en este proyecto no se utilizó esa opción por las siguientes razones:
 
