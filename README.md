@@ -22,9 +22,9 @@ Rango DHCP: 172.16.10.2 – 172.16.10.52
 
        Internet
       |
-       192.168.0.1
+       192.168.x.x
       |
-      [enp1s0] 192.168.0.50
+      [enp1s0] 192.168.x.x
       |
       Servidor Router
       |
@@ -49,13 +49,13 @@ Rango DHCP: 172.16.10.2 – 172.16.10.52
        enp1s0:
          dhcp4: false
          addresses:
-           - 192.168.0.50/24
+           - 192.168.x.x/24
          routes:
            - to: default
-             via: 192.168.0.1
+             via: 192.168.x.x
          nameservers:
            addresses:
-             - 192.168.0.1
+             - 192.168.x.x
              - 8.8.8.8
           
 > /etc/systemd/network/10-wlp2s0.network
@@ -90,11 +90,12 @@ Rango DHCP: 172.16.10.2 – 172.16.10.52
       interface=wlp2s0
       bind-interfaces
       port=53
+
+      #DNSGOOGLE & CLOUDFLARE
+      server=8.8.8.8 
+      server=1.1.1.1 
       
-      server=8.8.8.8
-      server=1.1.1.1
-      
-      dhcp-range=172.16.10.2,172.16.10.52,12h
+      dhcp-range=172.16.10.x,172.16.10.x,12h
       dhcp-option=3,172.16.10.1
       dhcp-option=6,172.16.10.1,{dns_server}
       
@@ -182,14 +183,14 @@ Esto es lo que permite que múltiples dispositivos compartan una sola conexión 
                             Driver: iwlwifi
                             Vendor: Intel Corporation
                              Model: Wireless 8260
-                  Hardware Address: 14:ab:c5:a0:77:65 (Intel Corporate)
+                  Hardware Address: XX:XX:XX:XX:XX:XX (Intel Corporate)
                                MTU: 1500 (min: 256, max: 2304)
                              QDisc: noqueue
       IPv6 Address Generation Mode: eui64
-                Wi-Fi access point: LABORATORIO (00:00:00:00:00:00)
+                Wi-Fi access point: SSID_LAB
           Number of Queues (Tx/Rx): 1/1
-                           Address: 172.16.10.1
-                                    fe80::16ab:c5ff:fea0:7765
+                           Address: 172.16.10.x
+                                    fe80::16ab:c5ff:fea0:XXXX
                  Activation Policy: up
                Required For Online: yes
 
